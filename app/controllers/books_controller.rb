@@ -6,6 +6,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    #book_path books/:id
+    @book = Book.find(params[:id])
+    @user = User.find(@book.user_id)
   end
 
   def new
@@ -25,6 +28,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   private
