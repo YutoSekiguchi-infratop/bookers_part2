@@ -1,1 +1,23 @@
-edit
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>Editing Book</h1>
+      <%= form_with model: @book, local: true do |f| %>
+        <div class="form-group">
+          <label for="inputTitle">Title</label><br>
+          <%= f.text_field :title, autofocus: true, id:"inputTitle", class:"form-controll" %>
+        </div>
+        <div class="form-group">
+          <label for="inputOpinion">Opinion</label><br>
+          <%= f.text_area :body, autofocus: true, rows: 3, id:"inputOpinion", class:"form-controll" %>
+        </div>
+        <%= f.submit "Update Book", class: "btn btn-success mb-3" %>
+      <% end %>
+      <div class="row px-3">
+          <%= link_to "Show", book_path(@book) %>
+          <p class="px-1">|</p>
+          <%= link_to "Back", books_path %>
+      </div>
+    </div>
+  </div>
+</div>
