@@ -69,6 +69,9 @@
       </nav>
     </header>
     <main class="mt- mb-auto">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
       <%= yield %>
     </main>
     <footer class="bg-white text-dark mr-auto ml-auto vh-100 mt-4">
